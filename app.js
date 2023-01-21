@@ -24,7 +24,13 @@ xhr.setRequestHeader("Authorization", "Bearer " + access_token);
 xhr.onload = function () {
   if (xhr.status === 200) {
     console.log(xhr.responseText);
-    document.write(xhr.responseText);
+    document.write("<pre>");
+    // document.write(xhr.responseText);
+    const response = JSON.parse(xhr.responseText);
+    console.log("response:", response);
+
+    document.write(JSON.stringify(response, null, 2));
+    document.write("</pre>");
     document.write("<br><br><br><br>");
 
     var fbdata = xhr.responseText; //raw response json
@@ -50,7 +56,6 @@ xhr.onload = function () {
 	  */
 
     document.write("<br><br><br><br>");
-    document.write("Script completed. Congrats!");
   }
 };
 xhr.send();
