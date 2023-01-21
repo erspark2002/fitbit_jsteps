@@ -1,13 +1,83 @@
 <!DOCTYPE html>
 <html>
-<head>
- <title>Fitbit API JavaScript EXAMPLE</title>
-</head>
-<body>
+  <head>
+    <title>Fitbit API JavaScript EXAMPLE</title>
+  </head>
+  <body>
+    <!-- <a
+      href="https://www.fitbit.com/oauth2/authorize?response_type=token&client_id=2397N8&redirect_uri=http%3A%2F%2Fredirect.website%2Fpage.html&scope=activity%20heartrate%20location%20nutrition%20profile%20settings%20sleep%20social%20weight&expires_in=604800"
+      >Login to Fitbit</a
+    > -->
+    <!-- 
 
-<a href="https://www.fitbit.com/oauth2/authorize?response_type=token&client_id=#####&redirect_uri=http%3A%2F%2Fredirect.website%2Fpage.html&scope=activity%20heartrate%20location%20nutrition%20profile%20settings%20sleep%20social%20weight&expires_in=604800">Login to Fitbit</a>
+    #_Authorize
+        https://dev.fitbit.com/build/reference/web-api/authorization/authorize/
+        response_type
+        required	
+            "code" for Authorization Code Grant Flow [with PKCE]
+            "token" for Implicit Grant Flow.
 
-<!--
+    #___EVERY CONVERTOR - SHA256 Online
+    https://emn178.github.io/online-tools/sha256.html
+    f647786a22f5dc417e161dac5532810a338328e97c865c484ec61e6eee38c542
+
+    https://2256-124-148-222-94.au.ngrok.io/steps.html
+    https%3A%2F%2F2256-124-148-222-94.au.ngrok.io%2Fsteps.html
+
+    # Encode ONLY the parameter values
+        URL Decoder/Encoder
+        https://meyerweb.com/eric/tools/dencoder/
+
+    https://www.fitbit.com/oauth2/authorize?response_type=token
+    &client_id=2397N8
+    &redirect_uri=https://2256-124-148-222-94.au.ngrok.io/steps.html
+    &scope=activity heartrate location nutrition profile settings sleep social weight
+    &expires_in=604800
+
+    https://www.fitbit.com/oauth2/authorize?response_type=token
+    &client_id=2397N8
+    &redirect_uri=https%3A%2F%2F2256-124-148-222-94.au.ngrok.io%2Fsteps.html
+    &scope=activity%20heartrate%20location%20nutrition%20profile%20settings%20sleep%20social%20weight
+    &expires_in=604800
+
+    https://www.fitbit.com/oauth2/authorize?response_type=token&client_id=2397N8&redirect_uri=https%3A%2F%2F2256-124-148-222-94.au.ngrok.io%2Fsteps.html&scope=activity%20heartrate%20location%20nutrition%20profile%20settings%20sleep%20social%20weight&expires_in=604800    
+-->
+    <!-- <a
+      href="https://www.fitbit.com/oauth2/authorize?response_type=token&client_id=2397N8&redirect_uri=https%3A%2F%2F2256-124-148-222-94.au.ngrok.io%2Fsteps.html&scope=activity%20heartrate%20location%20nutrition%20profile%20settings%20sleep%20social%20weight&expires_in=604800"
+      >Login to Fitbit</a
+    > -->
+
+    <!-- works: response_type=code -->
+    <!--  <a
+      href="https://www.fitbit.com/oauth2/authorize?response_type=code&client_id=2397N8&redirect_uri=https%3A%2F%2F2256-124-148-222-94.au.ngrok.io%2Fsteps.html&scope=activity%20heartrate%20location%20nutrition%20profile%20settings%20sleep%20social%20weight&expires_in=604800"
+      >Login to Fitbit</a
+    > -->
+
+    <!-- works: response_type=token -->
+    <a
+      href="https://www.fitbit.com/oauth2/authorize?response_type=token&client_id=2397N8&redirect_uri=https%3A%2F%2F2256-124-148-222-94.au.ngrok.io%2Fsteps.html&scope=activity%20heartrate%20location%20nutrition%20profile%20settings%20sleep%20social%20weight&expires_in=604800"
+      >Login to Fitbit</a
+    >
+
+    <form action="https://www.fitbit.com/oauth2/authorize" method="POST">
+      <input type="hidden" name="" value="" />
+      <input type="hidden" name="response_type" value="token" />
+      <input type="hidden" name="client_id" value="2397N8" />
+      <input
+        type="hidden"
+        name="redirect_uri"
+        value="https://2256-124-148-222-94.au.ngrok.io/steps.html"
+      />
+      <input
+        type="hidden"
+        name="scope"
+        value="activity heartrate location nutrition profile settings sleep social weight"
+      />
+      <input type="hidden" name="expires_in" value="604800" />
+      <input type="submit" name="" value="Fitbit" />
+    </form>
+
+    <!--
 
 Follow the steps here to get started:
 https://dev.fitbit.com/build/reference/web-api/
@@ -23,10 +93,9 @@ The user will click that link and it will allow them to log in and then display 
 
 -->
 
-<script src="app.js"></script>
+    <script src="app.js"></script>
 
-<br>
-<br> 
-
-</body>
+    <br />
+    <br />
+  </body>
 </html>
